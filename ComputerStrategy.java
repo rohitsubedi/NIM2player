@@ -23,7 +23,7 @@ public class ComputerStrategy {
 
             for (int i = 2; i <= 6; i++) {
                 numOfStones = numOfStones - i;
-                bestValue   = calculateBestMove(numOfStones, true);
+                bestValue   = calculateBestMove(numOfStones, false);
                 numOfStones = numOfStones + i;
             }
 
