@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Main
+public class NIM2player
 {
     /**
      * Print new line as per number provided
@@ -24,19 +24,6 @@ public class Main
     }
 
     /**
-     * Computer Strategy for removing stones in a game
-     *
-     * @param int stones
-     *
-     * @return int
-     */
-    private static int computerStrategy(int stones) {
-        int rem = stones % 3;
-
-        return rem == 0 ? 2 : 1;
-    }
-
-    /**
      * Main function of the game
      *
      * @param String[] args
@@ -44,6 +31,7 @@ public class Main
      * @return null
      */
     public static void main(String[] args) {
+        boolean continuePlaying = false;
         // Variable to store Number of Stones in a pile that will be selected by first player.
         int numOfStones = 0;
         // array Variables for players name and id
@@ -59,7 +47,7 @@ public class Main
         playersId[2]   = "ComputerID"; // Store 3rd Id as Computer Id
 
         do {
-            boolean continuePlaying = false;
+            continuePlaying = false;
             int count = 0;
             // Loop to get names of both human players. Ask for name again if they dont give any
             while (count < 2) {
@@ -149,7 +137,7 @@ public class Main
                 System.out.printf(String.format("Player Turn: %s\n", capitalize(playersName[count])));
 
                 if (count == 2) { // Computer turn
-                    num = computerStrategy(numOfStones);
+                    num = ComputerStrategy.getComputerBestMoves(numOfStones);
 
                     System.out.printf(String.format("Computer chooses to remove %d stones\n", num));
                 } else {
