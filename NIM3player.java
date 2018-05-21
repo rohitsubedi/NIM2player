@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class NIM2player
+public class NIM3player
 {
     /**
      * Print new line as per number provided
